@@ -1,0 +1,101 @@
+<mat-card class="__card">
+
+  <div
+    class="__header"
+    fxLayout="row"
+    fxLayoutAlign="space-between center">
+
+    <div
+      class="__header-left"
+      fxLayout="row"
+      fxLayoutAlign="space-between center">
+
+      <span
+        *ngIf="project"
+        class="__chip"
+        [style.background-color]="project.color">
+        {{ project.text }}
+      </span>
+
+      <span
+        *ngIf="specialization"
+        class="__chip"
+        [style.background-color]="specialization.color">
+        {{ specialization.text }}
+      </span>
+
+    </div>
+
+
+    <div
+      class="__type"
+      [style.background-color]="type?.color">
+      {{ type?.text }}
+    </div>
+
+  </div>
+
+  <div class="__body">
+    <span class="__text">
+      
+      <a
+        *ngIf="taskUrl && number"
+        [href]="taskUrl"
+        target="_blank">
+        <span class="__number">#{{ number }}: </span>
+      </a> 
+
+      <span *ngIf="text">{{ text }}</span>
+    
+    </span>
+  </div>
+
+  <div
+    class="__footer"
+    fxLayout="row"
+    fxLayoutAlign="space-between center">
+
+    <div>
+
+      <img
+        *ngIf="assigneeUrl"
+        class="__avatar"
+        [src]="assigneeUrl"
+      />
+
+      <span
+        *ngIf="!assigneeUrl && assigneeInitials"
+        class="__chip">
+        {{ assigneeInitials }}
+      </span>
+
+      <img
+        class="__avatar __avatar--mini"
+        *ngIf="testerUrl" [src]="testerUrl"
+      />
+
+      <span
+        *ngIf="!testerUrl && testerInitials"
+        class="__chip">
+        {{ testerInitials }}
+      </span>
+
+    </div>
+
+    <div
+      *ngIf="estimatedHours"
+      class="__estimates">
+
+      {{ doneHours || 0 }}/{{ estimatedHours }}h
+
+    </div>
+
+  </div>
+
+  <mat-progress-bar
+    *ngIf="doneRatio"
+    mode="determinate"
+    [value]="doneRatio">
+  </mat-progress-bar>
+
+</mat-card>

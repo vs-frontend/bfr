@@ -1,0 +1,66 @@
+@import 'toolkit';
+
+.__card {
+    display: block;
+    
+    max-width: 300px;
+    min-height: 20px;
+}
+
+  .__header, .__body, .__footer {
+    margin-bottom: $bu / 2;
+  }
+
+    .__header-left {
+      min-width: 55px;
+    }
+
+      .__chip{
+        min-width: 25px;
+        padding: 5px;
+
+        text-align: center;
+        font-size: 13px;
+
+        border-radius: 50%;
+      }
+
+    .__type {
+      padding: 5px;
+
+      text-align: center;
+      font-size: 13px;
+
+      border-radius: 15px;
+    }
+
+    .__text {
+      display: block;
+
+      font-size: 15px;
+      color: #17394d;
+      text-decoration: none;
+      word-wrap: break-word;
+
+      overflow: hidden;
+    }
+
+      .__number, .__estimates {
+        opacity: 0.5;
+      }
+    
+    .__avatar {
+      max-width: 30px;
+      border-radius: 50%;
+    }
+
+      .__avatar--mini {
+        max-width: 20px;
+
+        margin-left: -12px;
+        margin-bottom: -5px;
+        
+        border: 2px solid white;
+      }
+  
+  
