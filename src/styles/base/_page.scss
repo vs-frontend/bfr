@@ -1,0 +1,42 @@
+@import 'toolkit';
+
+html {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100%;
+  font-family: $fontMain;
+  background: background(page);
+  color: color(copy);
+}
+
+* {
+  &,
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+}
+
+::selection {
+  background: color(identityBetaColor);
+  color: white;
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  margin-bottom: $bu;
+}

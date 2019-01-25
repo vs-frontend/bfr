@@ -1,0 +1,68 @@
+@import '~@angular/material/theming';
+
+$vshAlphaColor: (
+  100: #3f9c35,
+  500: #3f9c35,
+  700: #3f9c35,
+  contrast: (
+    100: #3f9c35,
+    500: #3f9c35,
+    700: #3f9c35
+  )
+);
+
+$vshBetaColor: (
+  100: #e3ce35,
+  500: #e3ce35,
+  700: #e3ce35,
+  contrast: (
+    100: #e3ce35,
+    500: #e3ce35,
+    700: #e3ce35,
+  )
+);
+
+$vshGammaColor: (
+  100: #2a5396,
+  500: #2a5396,
+  700: #2a5396,
+  contrast: (
+    100: #2a5396,
+    500: #2a5396,
+    700: #2a5396
+  )
+);
+
+$appThemePrimary: mat-palette($vshAlphaColor);
+$appThemeAccent:  mat-palette($vshGammaColor);
+$appThemeWarn: mat-palette($mat-red);
+
+$appTheme: mat-light-theme(
+  $appThemePrimary,
+  $appThemeAccent,
+  $appThemeWarn
+);
+
+// font
+$fontMain: 'Source Sans Pro', sans-serif;
+$fontAlt: 'Overpass Mono', monospace;
+
+
+// colorgrey
+$colors: (
+  copy: #333,
+  grey: #999,
+  copyInvert: #f1f1f1,
+  identityAlphaColor: map-get($vshAlphaColor, 500),
+  identityBetaColor: map-get($vshBetaColor, 500),
+  identityGammaColor: map-get($vshGammaColor, 500)
+);
+
+$backgrounds: (
+  page: #fff,
+  light: #f9f9f9,
+  grey: #f1f1f1,
+  identityAlphaColor: map-get($vshAlphaColor, 500),
+  identityBetaColor: map-get($vshBetaColor, 500),
+  identityGammaColor: map-get($vshGammaColor, 500)
+);
