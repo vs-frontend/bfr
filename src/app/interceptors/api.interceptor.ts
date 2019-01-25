@@ -18,7 +18,10 @@ export class ApiInterceptor implements HttpInterceptor {
 
     if (request.url.startsWith('/api')) {
       request = request.clone({
-        url: environment.apiEndpoint + request.url.replace('/api', '')
+        url: environment.apiEndpoint + request.url.replace('/api', ''),
+        setHeaders: {
+          'X-Redmine-API-Key': 'be5788214e882262f822883bedc329b873ddd24e'
+        }
       });
 
       return next.handle(request).pipe(
