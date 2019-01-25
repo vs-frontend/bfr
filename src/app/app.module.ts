@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppRoutingModule } from './app-routing.module';
+import { IssuesModule } from './modules/pages/-issues';
+import { AppRoutesModule } from './app.routes';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -11,11 +12,11 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    AppRoutesModule,
+    IssuesModule
   ],
-  providers: [],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
