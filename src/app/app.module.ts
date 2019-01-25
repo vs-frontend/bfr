@@ -5,6 +5,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IssuesModule } from './modules/pages/-issues';
 import { AppRoutesModule } from './app.routes';
 import { AppComponent } from './app.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,8 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     FlexLayoutModule,
     AppRoutesModule,
-    IssuesModule
+    IssuesModule,
+    StoreModule.forRoot(reducers, { metaReducers })
   ],
   bootstrap: [ AppComponent ]
 })
