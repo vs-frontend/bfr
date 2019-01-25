@@ -31,3 +31,24 @@ export const selectIssuesTotal = createSelector(
   selectState,
   selectTotal
 );
+
+export const selectIssuesMapByState = createSelector(
+  selectAllIssues,
+  (issues) => issues
+    .filter((itm) => itm.tracker.id !== 4)
+    .reduce((obj, itm) => {
+      if (!obj[itm.status.id]) {
+        obj[itm.status.id] = {
+          status: itm.status,
+          items: []
+        };
+      }
+
+      obj[itm.status.id].items = [
+        ...obj[itm.status.id].items,
+        itm
+      ];
+
+      return obj;
+    }, {})
+);

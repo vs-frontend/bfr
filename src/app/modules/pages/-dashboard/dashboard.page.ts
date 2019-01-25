@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { selectAllIssues } from '@app/core/redmine-core';
+import { selectIssuesMapByState } from '@app/core/redmine-core';
 import { AppState } from '@app/models';
 
 @Component({
@@ -9,7 +9,9 @@ import { AppState } from '@app/models';
   styleUrls: [ './dashboard.page.scss' ]
 })
 export class DashboardPage {
-  data$ = this._store.pipe(select(selectAllIssues));
+  dataMap$ = this._store.pipe(select(selectIssuesMapByState));
 
-  constructor(private _store: Store<AppState>) { }
+  constructor(private _store: Store<AppState>) {
+    this.dataMap$.subscribe(console.log);
+  }
 }
