@@ -7,6 +7,9 @@ import { DashboardModule } from './modules/pages/-dashboard';
 import { AppRoutesModule } from './app.routes';
 import { AppComponent } from './app.component';
 import { reducers, metaReducers } from './reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { AppEffects } from './app.effects';
+import { ApiInterceptorModule } from './interceptors/api.interceptor';
 
 @NgModule({
   declarations: [
@@ -17,8 +20,10 @@ import { reducers, metaReducers } from './reducers';
     BrowserAnimationsModule,
     FlexLayoutModule,
     StoreModule.forRoot(reducers, { metaReducers }),
+    EffectsModule.forRoot([AppEffects]),
+    ApiInterceptorModule,
     AppRoutesModule,
-    DashboardModule,
+    DashboardModule
   ],
   bootstrap: [ AppComponent ]
 })
